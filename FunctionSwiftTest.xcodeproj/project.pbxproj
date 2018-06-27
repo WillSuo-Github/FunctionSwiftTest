@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54CD821A20E38E43003F3DE0 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD821920E38E42003F3DE0 /* ArrayExt.swift */; };
 		8AE169A120DF903000601C49 /* ShipRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE169A020DF903000601C49 /* ShipRegion.swift */; };
 		8AE169A320DF912A00601C49 /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE169A220DF912A00601C49 /* ImageExt.swift */; };
 		EE28E00820C3CAFA003969D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE28E00720C3CAFA003969D1 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54CD821920E38E42003F3DE0 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		8AE169A020DF903000601C49 /* ShipRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipRegion.swift; sourceTree = "<group>"; };
 		8AE169A220DF912A00601C49 /* ImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExt.swift; sourceTree = "<group>"; };
 		EE28E00420C3CAFA003969D1 /* FunctionSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				EE28E00920C3CAFA003969D1 /* ViewController.swift */,
 				8AE169A020DF903000601C49 /* ShipRegion.swift */,
 				8AE169A220DF912A00601C49 /* ImageExt.swift */,
+				54CD821920E38E42003F3DE0 /* ArrayExt.swift */,
 				EE28E00B20C3CAFA003969D1 /* Main.storyboard */,
 				EE28E00E20C3CAFB003969D1 /* Assets.xcassets */,
 				EE28E01020C3CAFB003969D1 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE28E00A20C3CAFA003969D1 /* ViewController.swift in Sources */,
+				54CD821A20E38E43003F3DE0 /* ArrayExt.swift in Sources */,
 				8AE169A320DF912A00601C49 /* ImageExt.swift in Sources */,
 				8AE169A120DF903000601C49 /* ShipRegion.swift in Sources */,
 				EE28E00820C3CAFA003969D1 /* AppDelegate.swift in Sources */,

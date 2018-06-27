@@ -15,11 +15,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        ShipRegion()
-        ImageExt()
+        
+        testShipRegion()
+        testImageExtion()
         
     }
     
+    private func testShipRegion() {
+        _ = ShipRegion()
+    }
     
+    private func testImageExtion() {
+        let imageExt = ImageExt()
+        if let image = imageExt.resultImage {
+            let context = CIContext(options: nil)
+            let cgImage = context.createCGImage(image, from: image.extent)!
+            
+            let imageView = UIImageView(image: UIImage(cgImage: cgImage))
+            imageView.frame = CGRect(x: 100, y: 100, width: 300, height: 300)
+            view.addSubview(imageView)
+        }
+    }
 }
 
