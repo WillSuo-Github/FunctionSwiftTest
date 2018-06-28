@@ -16,9 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        testShipRegion()
-        testImageExtion()
-        
+//        testShipRegion()
+//        testImageExtion()
+        testArray()
     }
     
     private func testShipRegion() {
@@ -35,6 +35,11 @@ class ViewController: UIViewController {
             imageView.frame = CGRect(x: 100, y: 100, width: 300, height: 300)
             view.addSubview(imageView)
         }
+    }
+    
+    private func testArray() {
+        let array = [1, 2, 3]
+        print(array.double2(array: array))
     }
 }
 
