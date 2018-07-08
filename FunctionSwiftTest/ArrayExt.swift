@@ -39,4 +39,22 @@ extension Array {
         }
         return result
     }
+    
+    func compute2<T>(array: [Int], transform:(Int) -> T) -> [T] {
+        var result: [T] = []
+        
+        for x in array {
+            result.append(transform(x))
+        }
+        return result
+    }
+    
+    func compute3<Element, T>(array: [Element], transform:(Element) -> T) -> [T] {
+        var result: [T] = []
+        
+        for x in array {
+            result.append(transform(x))
+        }
+        return result
+    }
 }

@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         
 //        testShipRegion()
 //        testImageExtion()
-        testArray()
+//        testArray()
+        testSessionOne()
     }
     
     private func testShipRegion() {
@@ -40,6 +41,10 @@ class ViewController: UIViewController {
     private func testArray() {
         let array = [1, 2, 3]
         print(array.double2(array: array))
+    }
+    
+    private func testSessionOne() {
+        _ = SessionOne()
     }
 }
 
