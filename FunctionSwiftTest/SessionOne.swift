@@ -20,7 +20,11 @@ extension City {
     }
 }
 
-protocol Arbitrary {
+protocol Smaller {
+    func smaller() -> Self?
+}
+
+protocol Arbitrary: Smaller {
     static func arbitrary() -> Self
 }
 
@@ -36,19 +40,25 @@ extension Int: Arbitrary {
     }
 }
 
-extension UnicodeScalar: Arbitrary {
-    static func arbitrary() -> UnicodeScalar {
-        return UnicodeScalar(Int.arbitrary(in: 65..<90))!
-    }
-}
+//extension UnicodeScalar: Arbitrary {
+//    static func arbitrary() -> UnicodeScalar {
+//        return UnicodeScalar(Int.arbitrary(in: 65..<90))!
+//    }
+//}
+//
+//extension String: Arbitrary {
+//    static func arbitrary() -> String {
+//        let randomLength = Int.arbitrary(in: 0..<40)
+//        let randomScalars = (0..<randomLength).map { _ in
+//            UnicodeScalar.arbitrary()
+//        }
+//        return String(UnicodeScalarView(randomScalars))
+//    }
+//}
 
-extension String: Arbitrary {
-    static func arbitrary() -> String {
-        let randomLength = Int.arbitrary(in: 0..<40)
-        let randomScalars = (0..<randomLength).map { _ in
-            UnicodeScalar.arbitrary()
-        }
-        return String(UnicodeScalarView(randomScalars))
+extension Int: Smaller {
+    func smaller() -> Int? {
+        return self == 0 ? nil: self / 2
     }
 }
 
@@ -58,11 +68,11 @@ extension CGSize {
     }
 }
 
-extension CGSize: Arbitrary {
-    static func arbitrary() -> CGSize {
-        return CGSize(width: .arbitrary(), height: .arbitrary())
-    }
-}
+//extension CGSize: Arbitrary {
+//    static func arbitrary() -> CGSize {
+//        return CGSize(width: .arbitrary(), height: .arbitrary())
+//    }
+//}
 
 class SessionOne {
     init() {
@@ -88,7 +98,14 @@ class SessionOne {
     }
     
     func testCheck() {
-        check1("Area should be at least 0"){(size: CGSize) in size.area >= 0}
+//        check1("Area should be at least 0"){(size: CGSize) in size.area >= 0}
+    }
+    
+    func iterate<A>(while condition:(A) -> Bool, initial: A, next:(A)->A?) -> A {
+        guard let x = next(initial), condition(x) else {
+            return initial
+        }
+        return iterate(while: condition, initial: x, next: next)
     }
     
     func check1<A: Arbitrary>(_ message: String, _ property:(A) -> Bool) -> () {

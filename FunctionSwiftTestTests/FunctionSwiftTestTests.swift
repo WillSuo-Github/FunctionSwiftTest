@@ -22,8 +22,4 @@ class FunctionSwiftTestTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_plus() {
-        
-    }
-    
 }
