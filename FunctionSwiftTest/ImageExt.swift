@@ -34,7 +34,7 @@ class ImageExt: NSObject {
                 kCIInputImageKey: image,
             ]
             
-            guard let filter = CIFilter(name: "CIGaussianBlur", withInputParameters: parameters) else {fatalError()}
+            guard let filter = CIFilter(name: "CIGaussianBlur", parameters: parameters) else {fatalError()}
             guard let outputImage = filter.outputImage else {fatalError()}
             
             return outputImage
@@ -45,7 +45,7 @@ class ImageExt: NSObject {
         return { _ in
             
             let parameters = [kCIInputColorKey: CIColor(cgColor: color.cgColor)]
-            guard let filter = CIFilter(name: "CIConstantColorGenerator", withInputParameters: parameters) else {fatalError()}
+            guard let filter = CIFilter(name: "CIConstantColorGenerator", parameters: parameters) else {fatalError()}
             guard let outputImage = filter.outputImage else {fatalError()}
             
             return outputImage
@@ -59,7 +59,7 @@ class ImageExt: NSObject {
                 kCIInputImageKey: overlay
             ]
             
-            guard let filter = CIFilter(name: "CISourceOverCompositing", withInputParameters: parameters) else {fatalError()}
+            guard let filter = CIFilter(name: "CISourceOverCompositing", parameters: parameters) else {fatalError()}
             guard let outputImage = filter.outputImage else {fatalError()}
             
             return outputImage.cropped(to: image.extent)

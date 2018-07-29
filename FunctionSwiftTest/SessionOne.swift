@@ -26,6 +26,7 @@ protocol Smaller {
 
 protocol Arbitrary: Smaller {
     static func arbitrary() -> Self
+
 }
 
 extension Int: Arbitrary {
@@ -38,6 +39,8 @@ extension Int: Arbitrary {
         let diff = range.upperBound - range.lowerBound
         return range.lowerBound + (Int.arbitrary() % diff)
     }
+    
+    
 }
 
 //extension UnicodeScalar: Arbitrary {
@@ -73,6 +76,11 @@ extension CGSize {
 //        return CGSize(width: .arbitrary(), height: .arbitrary())
 //    }
 //}
+
+struct ArbitraryInstance<T> {
+    let arbitrary: () -> T
+    let smaller: (T) -> T?
+}
 
 class SessionOne {
     init() {
@@ -117,6 +125,35 @@ class SessionOne {
             }
         }
         print("\"\(message)\" passed 10000 test")
+    }
+    
+    func check2<A: Arbitrary>(_ message: String, _ property:(A) -> Bool) -> () {
+        for _ in 0..<100 {
+            let value = A.arbitrary()
+            guard property(value) else {
+                let smallerValue = iterate(while: property, initial: value){$0.smaller()}
+                print("\"\(message)\"doesn't hold: \(smallerValue)")
+                return
+            }
+        }
+        print("\"\(message)\"passed: \(100)")
+    }
+    
+    func checkHelper<A>(_ aribraryInstance: ArbitraryInstance<A>, _ property:(A) -> Bool, _ message: String) -> () {
+        for _ in 0..<100 {
+            let value = aribraryInstance.arbitrary();
+            guard property(value) else {
+                let smallerValue = iterate(while: {!property($0)}, initial: value, next: aribraryInstance.smaller)
+                print("\"\(message) doesn't hold: \(smallerValue)")
+                return
+            }
+        }
+        print("\"\(message)\"passed: \(100)")
+    }
+    
+    func check<X: Arbitrary>(_ message: String, property:(X) -> Bool) -> () {
+        let instance = ArbitraryInstance(arbitrary: X.arbitrary, smaller: {$0.smaller()})
+        checkHelper(instance, property, message)
     }
     
     func pluslsCommutative(x: Int, y: Int) -> Bool {
