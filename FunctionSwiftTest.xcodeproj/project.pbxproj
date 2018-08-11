@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		545FD7392118860000304606 /* StringTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545FD7382118860000304606 /* StringTree.swift */; };
 		54C01ADC210A0522006F2840 /* EnumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C01ADB210A0522006F2840 /* EnumTest.swift */; };
 		54CD821A20E38E43003F3DE0 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD821920E38E42003F3DE0 /* ArrayExt.swift */; };
 		8A54276020E8A4B5004C43ED /* SessionOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54275F20E8A4B5004C43ED /* SessionOne.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		545FD7382118860000304606 /* StringTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTree.swift; sourceTree = "<group>"; };
 		54C01ADB210A0522006F2840 /* EnumTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTest.swift; sourceTree = "<group>"; };
 		54CD821920E38E42003F3DE0 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		8A54275F20E8A4B5004C43ED /* SessionOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOne.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				54CD821920E38E42003F3DE0 /* ArrayExt.swift */,
 				8A54275F20E8A4B5004C43ED /* SessionOne.swift */,
 				54C01ADB210A0522006F2840 /* EnumTest.swift */,
+				545FD7382118860000304606 /* StringTree.swift */,
 				EE28E00B20C3CAFA003969D1 /* Main.storyboard */,
 				EE28E00E20C3CAFB003969D1 /* Assets.xcassets */,
 				EE28E01020C3CAFB003969D1 /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 			files = (
 				EE28E00A20C3CAFA003969D1 /* ViewController.swift in Sources */,
 				54CD821A20E38E43003F3DE0 /* ArrayExt.swift in Sources */,
+				545FD7392118860000304606 /* StringTree.swift in Sources */,
 				8A54276020E8A4B5004C43ED /* SessionOne.swift in Sources */,
 				8AE169A320DF912A00601C49 /* ImageExt.swift in Sources */,
 				8AE169A120DF903000601C49 /* ShipRegion.swift in Sources */,

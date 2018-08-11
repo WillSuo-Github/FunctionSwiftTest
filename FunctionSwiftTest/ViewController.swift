@@ -19,7 +19,8 @@ class ViewController: UIViewController {
 //        testShipRegion()
 //        testImageExtion()
 //        testArray()
-        testSessionOne()
+//        testSessionOne()
+        testStringTree()
     }
     
     private func testShipRegion() {
@@ -45,6 +46,10 @@ class ViewController: UIViewController {
     
     private func testSessionOne() {
         _ = SessionOne()
+    }
+    
+    private func testStringTree() {
+        _ = StringTree()
     }
 }
 
